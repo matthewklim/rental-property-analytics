@@ -54,7 +54,7 @@ sources:
         description: "Array of amenities available for guests."
 
       - name: price_dollars
-        description: "The price of this listing as of the start of the date range in CALENDAR."
+        description: "Numeric USD price of this listing as of the start of the date range in CALENDAR."
 
       - name: number_of_reviews
         description: "The number of reviews this listing has ever received."
