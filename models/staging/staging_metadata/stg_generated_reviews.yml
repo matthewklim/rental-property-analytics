@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: stg_generated_reviews
+    description: "This table contains auto-generated review data for listings."
+
+    columns:
+      - name: review_id
+        description: "Auto-incrementing ID for the dummy reviews data."
+        tests:
+          - unique
+
+      - name: listing_id
+        description: "Unique ID for the listing to which this row applies."
+        tets:
+          - not_null
+
+      - name: review_score
+        description: "Generated score of the review, ranging from 1 to 5."
+
+      - name: review_date
+        description: "Generated date of the review."
