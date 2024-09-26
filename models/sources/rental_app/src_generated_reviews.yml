@@ -7,6 +7,7 @@ sources:
     tables:
       - name: generated_reviews
         description: "This table contains auto-generated review data for listings."
+
         columns:
           - name: id
             description: "Auto-incrementing ID for the dummy reviews data."
