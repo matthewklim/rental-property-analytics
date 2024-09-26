@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: rental_app
-    database: sandbox_mlim 
-    schema: rental_app    
+    database: sandbox_mlim
+    schema: rental_app
     tables:
       - name: calendar
         description: "This table provides availability information for rental listings on specific dates."

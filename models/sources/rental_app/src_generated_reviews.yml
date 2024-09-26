@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: rental_app
-    database: sandbox_mlim 
-    schema: rental_app  
+    database: sandbox_mlim
+    schema: rental_app
     tables:
       - name: generated_reviews
         description: "This table contains auto-generated review data for listings."
