@@ -1,0 +1,34 @@
+version: 2
+
+sources:
+  - name: calendar
+    description: "This table provides availability information for rental listings on specific dates."
+
+    columns:
+      - name: listing_id
+        description: "Unique ID for the listing to which this row applies. Part of the primary key."
+
+      - name: availability_date
+        description: "Date of availability this row describes. Part of the primary key."
+
+      - name: is_available
+        description: "Boolean - TRUE if this property is available on this date. FALSE if not."
+        tests:
+          - not_null
+
+      - name: reservation_id
+        description: "Unique ID for that date's reservation. Foreign key. If NULL, there was no reservation on that date."
+
+      - name: price_dollars
+        description: "The USD price to rent this property on the specified date."
+
+      - name: minimum_nights
+        description: "The minimum number of nights that must be booked consecutively for this property."
+
+      - name: maximum_nights
+        description: "The maximum number of nights that may be booked consecutively for this property."
+
+      - name: listing_date_key
+        description: "HASH of listing_id and date"
+        tests:
+          - unique
