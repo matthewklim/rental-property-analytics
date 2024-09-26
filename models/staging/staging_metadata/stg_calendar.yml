@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: calendar
+  - name: stg_calendar
     description: "This table provides availability information for rental listings on specific dates."
 
     columns:
