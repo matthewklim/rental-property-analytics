@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: rental_app
-    database: sandbox_mlim 
+    database: sandbox_mlim
     schema: rental_app
     tables:
       - name: listings
