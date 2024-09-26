@@ -1,0 +1,71 @@
+version: 2
+
+sources:
+  - name: rental_app
+    database: sandbox_mlim 
+    schema: rental_app
+    tables:
+      - name: listings
+        description: "This table contains information about rental listings."
+
+        columns:
+          - name: id
+            description: "Unique ID for this listing. Primary Key."
+
+          - name: name
+            description: "Display name of listing."
+
+          - name: host_id
+            description: "Unique ID for the Host who owns this property."
+
+          - name: host_name
+            description: "Display name of Host."
+
+          - name: host_since
+            description: "When the Host signed up."
+
+          - name: host_location
+            description: "Where the Host is based."
+
+          - name: host_verifications
+            description: "Array of methods the Host can use to verify."
+
+          - name: neighborhood
+            description: "The neighborhood where this listing is located."
+
+          - name: property_type
+            description: "Description of the type of property."
+
+          - name: room_type
+            description: "Description of the type of room."
+
+          - name: accommodates
+            description: "Number of guests this room can accommodate."
+
+          - name: bathrooms_text
+            description: "Number and types of bathrooms available."
+
+          - name: bedrooms
+            description: "Number of bedrooms available for use."
+
+          - name: beds
+            description: "Number of beds available for use."
+
+          - name: amenities
+            description: "Array of amenities available for guests."
+
+          - name: price
+            description: "The price of this listing as of the start of the date range in CALENDAR."
+
+          - name: number_of_reviews
+            description: "The number of reviews this listing has ever received."
+
+          - name: first_review
+            description: "The date of the first review this listing received."
+
+          - name: last_review
+            description: "The date of the most recent review this listing received."
+
+          - name: review_scores_rating
+            description: "The average review score of this listing."
+
