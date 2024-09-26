@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: rental_app
+    database: sandbox_mlim
+    schema: rental_app
+    tables:
+      - name: amenities_changelog
+        description: "This table tracks changes to the amenities list for each listing."
+
+        columns:
+          - name: listing_id
+            description: "Unique ID for the listing to which this row applies."
+
+          - name: change_at
+            description: "Date and time when the amenities list changed."
