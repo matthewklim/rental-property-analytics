@@ -14,7 +14,7 @@ SELECT
 ,      bedrooms                                                                            AS number_of_bedrooms
 ,      beds                                                                                AS number_of_beds
 ,      amenities::ARRAY                                                                    AS amenities_list
-,      price::NUMERIC                                                                      AS price_dollars
+,      TRY_TO_NUMERIC(REGEXP_REPLACE(price, '$', ''))                                      AS price_dollars
 ,      number_of_reviews                                                                   AS number_of_reviews
 ,      first_review                                                                        AS first_review
 ,      last_review                                                                         AS last_review
