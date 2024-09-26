@@ -68,4 +68,3 @@ sources:
 
           - name: review_scores_rating
             description: "The average review score of this listing."
-

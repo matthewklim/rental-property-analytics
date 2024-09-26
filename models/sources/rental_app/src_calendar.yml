@@ -29,4 +29,3 @@ sources:
 
           - name: maximum_nights
             description: "The maximum number of nights that may be booked consecutively for this property."
-
