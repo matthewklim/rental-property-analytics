@@ -45,6 +45,9 @@ models:
       listing_amenities_sql:
         +materialized: view
 
+    mart:
+      +materialized: table
+
 snapshots:
     +strategy: check
     +unique_key: listing_id
