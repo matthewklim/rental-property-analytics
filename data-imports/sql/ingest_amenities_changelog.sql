@@ -1,8 +1,6 @@
 CREATE OR REPLACE TRANSIENT TABLE &table_destination (
-    LISTING_ID INTEGER NOT NULL COMMENT = 'ID linking to the listing associated with this amenities changelog',
-    CHANGE_DATE DATE NOT NULL COMMENT = 'Date when the amenities were changed',
-    AMENITIES_ADDED VARCHAR COMMENT = 'List of amenities added, stored as a JSON array',
-    AMENITIES_REMOVED VARCHAR COMMENT = 'List of amenities removed, stored as a JSON array'
+    LISTING_ID INTEGER NOT NULL COMMENT = 'Unique ID for the listing to which this row applies.',
+    CHANGE_AT DATETIME NOT NULL COMMENT = 'Date and time when the amenities list changed.'
 )
 COMMENT = 'Changelog of amenities added or removed for listings, tracking updates over time'
 CLUSTER BY (listing_id, change_date);
