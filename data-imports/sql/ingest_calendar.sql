@@ -1,8 +1,11 @@
 CREATE OR REPLACE TRANSIENT TABLE &table_destination (
-    LISTING_ID INTEGER NOT NULL COMMENT = 'ID linking to the listing',
-    CALENDAR_DATE DATE NOT NULL COMMENT = 'The date for which the availability is checked',
-    AVAILABLE BOOLEAN NOT NULL COMMENT = 'Whether the listing is available on the given date',
-    PRICE_DOLLARS VARCHAR NOT NULL COMMENT = 'Price of the listing in dollars on the given date'
+    LISTING_ID INTEGER NOT NULL COMMENT 'Unique ID for the listing to which this row applies. Part of the primary key.',
+    DATE DATE NOT NULL COMMENT 'ate of availability this row describes. Part of the primary key.',
+    AVAILABLE BOOLEAN NOT NULL COMMENT 'Contains 't' if this property is available on this date. Contains 'f' if not.',
+    RESERVATION_ID INTEGER NOT NULL COMMENT 'Unique ID for that date's reservation. Foreign key. If NULL, there was no reservation on that date.',
+    PRICE VARCHAR NOT NULL COMMENT 'The USD price to rent this property on the specified date.',
+    MINIMUM_NIGHTS INTEGER NOT NULL COMMENT 'The minimum number of nights that must be booked consecutively for this property.',
+    MAXIMUM_NIGHTS INTEGER NOT NULL COMMENT 'The maximum number of nights that may be booked consecutively for this property.'
 )
 COMMENT = 'Calendar of availability and pricing for listings'
 CLUSTER BY (calendar_date, listing_id);

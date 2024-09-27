@@ -6,7 +6,7 @@ sources:
     schema: rental_app
     tables:
       - name: listings
-        description: "This table contains information about rental listings."
+        description: "Detailed information for each listing, including host data, amenities, and review scores."
 
         columns:
           - name: id
