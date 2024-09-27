@@ -6,7 +6,7 @@ sources:
 
     columns:
       - name: review_id
-        description: "Auto-incrementing ID for the dummy reviews data."
+        description: "Auto-incrementing ID for the dummy reviews data. Listing IDs 1077105 and 13247 each contain one null review id"
         tests:
           - unique
 
@@ -19,4 +19,4 @@ sources:
         description: "Generated score of the review, ranging from 1 to 5."
 
       - name: review_date
-        description: "Generated date of the review."
+        description: "Generated date of the review. Listing IDs 1077105 and 13247 each also contain a null review date"

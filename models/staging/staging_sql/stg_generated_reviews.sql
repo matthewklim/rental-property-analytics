@@ -5,3 +5,5 @@ SELECT
 ,      review_date                                                                         AS review_date
 FROM
        {{ source('rental_app', 'generated_reviews') }}
+WHERE
+       NOT review_id IS NULL
