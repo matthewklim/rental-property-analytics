@@ -1,4 +1,4 @@
-CREATE OR REPLACE TRANSIENT TABLE generated_reviews (
+CREATE OR REPLACE TRANSIENT TABLE &table_destination (
     LISTING_ID INTEGER NOT NULL COMMENT = 'ID linking to the listing being reviewed',
     REVIEW_ID INTEGER NOT NULL COMMENT = 'Unique ID for the review',
     DATE_REVIEWED DATE NOT NULL COMMENT = 'Date when the review was posted',
