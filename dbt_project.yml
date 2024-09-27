@@ -44,3 +44,9 @@ models:
     intermediate:
       listing_amenities_sql:
         +materialized: view
+
+snapshots:
+    +strategy: check
+    +unique_key: listing_id
+    +check_cols: all
+    +target_schema: snapshots
