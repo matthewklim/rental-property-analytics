@@ -11,6 +11,9 @@ sources:
       - name: change_at
         description: "Date and time when the amenities list changed."
 
+      - name: amenities_list
+        description: "(Parseable as JSON) Array of the amenities available as of the change."
+
       - name: amenities_change_key
         description: "Hash of listing_id and change_at"
         tests:
