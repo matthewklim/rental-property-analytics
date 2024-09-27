@@ -28,7 +28,7 @@ foreach ($SqlFile in $SqlFiles) {
         -f $ResolvedSqlPath `
         -D database_name=$DatabaseName `
         -D schema_name=$SchemaName `
-        -D data_file_path=$DataFilePath
+        -D data_file_path=$DataFilePath `
         -D table_destination=$TableDestination `
         -D stage_destination=$StageDestination `
         -o quiet=true `
