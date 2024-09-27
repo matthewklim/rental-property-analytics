@@ -44,6 +44,12 @@ models:
       - name: bathrooms_text
         description: "Number and types of bathrooms available."
 
+      - name: bathroom_type
+        description: "Type of bathrooms available."
+
+      - name: number_of_bathrooms
+        description: "Number of Bathrooms of corresponding types of bathrooms available."
+
       - name: number_of_bedrooms
         description: "Number of bedrooms available for use."
 
