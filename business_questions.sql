@@ -28,7 +28,9 @@ QUALIFY
        )
 SELECT
        neighborhood_name
-       AVG(last_price_in_range - first_price_in_range)                                     AS average_price_change_for_neighborhood
+,      AVG(last_price_in_range - first_price_in_range)                                     AS average_price_change_for_neighborhood
+FROM
+       neighborhood_price_range
 GROUP BY
        1
 
