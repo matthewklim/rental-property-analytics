@@ -40,8 +40,7 @@ SELECT
        listing_id
 , longest_stay_duration
 FROM
-       {{ ref
-('listings_daily_summary') }}
+       {{ ref('listings_daily_summary') }}
 WHERE
        longest_stay_duration_rank = 1
 GROUP BY
@@ -54,8 +53,7 @@ SELECT
        listing_id
 , longest_stay_duration
 FROM
-       {{ ref
-('listings_daily_summary') }}
+       {{ ref('listings_daily_summary') }}
 WHERE
        has_lockbox
 AND
