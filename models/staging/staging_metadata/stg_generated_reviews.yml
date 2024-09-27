@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: stg_generated_reviews
-    description: "This table contains auto-generated review data for listings."
+    description: "Reviews generated for listings, including reviewer details and comments"
 
     columns:
       - name: review_id
