@@ -1,11 +1,11 @@
 CREATE OR REPLACE TRANSIENT TABLE &table_destination (
-    ID INTEGER NOT NULL COMMENT 'Auto-incrementing ID for the dummy reviews data'
+    ID INTEGER NULL COMMENT 'Auto-incrementing ID for the dummy reviews data',
     LISTING_ID INTEGER NOT NULL COMMENT 'Unique ID for the listing to which this row applies.',
     REVIEWER_SCORE INTEGER NOT NULL COMMENT 'Generated score of the review, ranging from 1 to 5.',
-    REVIEW_DATE DATE NOT NULL COMMENT 'Generated date of the review.'
+    REVIEW_DATE DATE NULL COMMENT 'Generated date of the review.'
 )
 COMMENT = 'Reviews generated for listings, including reviewer details and comments'
-CLUSTER BY (date_reviewed);
+CLUSTER BY (REVIEW_DATE);
 
 PUT &data_file_path &stage_destination
 parallel = 4
