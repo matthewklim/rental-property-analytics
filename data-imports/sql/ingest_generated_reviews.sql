@@ -1,10 +1,8 @@
 CREATE OR REPLACE TRANSIENT TABLE &table_destination (
-    LISTING_ID INTEGER NOT NULL COMMENT = 'ID linking to the listing being reviewed',
-    REVIEW_ID INTEGER NOT NULL COMMENT = 'Unique ID for the review',
-    DATE_REVIEWED DATE NOT NULL COMMENT = 'Date when the review was posted',
-    REVIEWER_ID INTEGER NOT NULL COMMENT = 'ID of the reviewer',
-    REVIEWER_NAME VARCHAR NOT NULL COMMENT = 'Name of the reviewer',
-    COMMENTS TEXT COMMENT = 'Text content of the review left by the reviewer'
+    ID INTEGER NOT NULL COMMENT 'Auto-incrementing ID for the dummy reviews data'
+    LISTING_ID INTEGER NOT NULL COMMENT 'Unique ID for the listing to which this row applies.',
+    REVIEWER_SCORE INTEGER NOT NULL COMMENT 'Generated score of the review, ranging from 1 to 5.',
+    REVIEW_DATE DATE NOT NULL COMMENT 'Generated date of the review.'
 )
 COMMENT = 'Reviews generated for listings, including reviewer details and comments'
 CLUSTER BY (date_reviewed);
