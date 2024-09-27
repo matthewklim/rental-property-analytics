@@ -8,11 +8,18 @@ $SchemaName = $env:snowsql_schema
 # Loop through each SQL file and run the ingestion
 foreach ($SqlFile in $SqlFiles) {
     # Construct SQL file path and related variables
+    $TableName = $SqlFile.Replace("ingest_", "")
     $SqlPath = Join-Path -Path $PSScriptRoot -ChildPath "..\sql\$($SqlFile).sql"
+    $DataPath = Join-Path -Path $PSScriptRoot -ChildPath "..\raw-data\$($TableName).csv"
+
+    # Resolved Paths
     $ResolvedSqlPath = Resolve-Path -Path $SqlPath
+    $ResolvedDataPath = Resolve-Path -Path $DataPath
+
+    # Data File Path
+    $DataFilePath = "file://$ResolvedDataPath"
 
     # Set unique table and stage destination based on SQL file name
-    $TableName = $SqlFile.Replace("ingest_", "")
     $TableDestination = "$($DatabaseName).$($SchemaName).$($TableName)"
     $StageDestination = "@$($DatabaseName).$($SchemaName).%$($TableName)"
 
@@ -21,6 +28,7 @@ foreach ($SqlFile in $SqlFiles) {
         -f $ResolvedSqlPath `
         -D database_name=$DatabaseName `
         -D schema_name=$SchemaName `
+        -D data_file_path=$DataFilePath
         -D table_destination=$TableDestination `
         -D stage_destination=$StageDestination `
         -o quiet=true `
