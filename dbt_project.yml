@@ -3,10 +3,12 @@
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
 name: 'rental_property_analytics'
+
+config-version: 2
 version: '1.0.0'
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'rental_property_analytics'
+profile: 'snowflake_user'
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
@@ -31,6 +33,14 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   rental_property_analytics:
-    # Config indicated by + and applies to all files under models/example/
-    example:
+    +persist_docs:
+      columns: true
+      relation: true
+    +schema: analytics
+
+    staging:
       +materialized: view
+
+    intermediate:
+      listing_amenities_sql:
+        +materialized: view
